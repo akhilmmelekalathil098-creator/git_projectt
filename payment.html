@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .payment-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+        .payment-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #333333;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555555;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .input-group input:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+        .row .input-group {
+            flex: 1;
+        }
+        .pay-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .pay-btn:hover {
+            background-color: #218838;
+        }
+        .order-summary {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #28a745;
+        }
+        .order-summary p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+        }
+        .order-summary .total {
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+            border-top: 1px solid #ddd;
+            padding-top: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Checkout</h2>
+        
+        <!-- Order Summary -->
+        <div class="order-summary">
+            <p><span>Premium Plan Subscription</span> <span>₹999.00</span></p>
+            <p><span>GST (18%)</span> <span>₹179.82</span></p>
+            <p class="total"><span>Total Amount</span> <span>₹1,178.82</span></p>
+        </div>
+
+        <!-- Payment Form -->
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="card-name">Cardholder Name</label>
+                <input type="text" id="card-name" name="cardname" placeholder="John Doe" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="cardnumber" placeholder="1234 5678 9101 1121" maxlength="19" required>
+            </div>
+            
+            <div class="row">
+                <div class="input-group">
+                    <label for="exp-date">Expiry Date</label>
+                    <input type="text" id="exp-date" name="expdate" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div class="input-group">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="pay-btn">Pay Securely</button>
+        </form>
+    </div>
+</body>
+</html>
+
